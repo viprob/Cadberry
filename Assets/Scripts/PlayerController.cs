@@ -4,43 +4,72 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	public float speed = 15.0F;
-	public float jumpSpeed = 5.5F;
-	public Vector3 gravity = new Vector3(0.0F,-20.0F ,0.0F);
+	public float speed = 10f;
+	public Vector3 jump = new Vector3(0f, 10f ,0f);
+	//public Vector3 gravity = new Vector3 (0f, -10f, 0f);
 
-	public Vector3 velocity;
-	private CharacterController cc;
+	private Vector3 nextVelocity;
+	private bool grounded;
+	private Rigidbody rb;
 
 	void Awake(){
-		cc = GetComponent<CharacterController> ();
+		rb = GetComponent<Rigidbody>();
+	}
+
+	void Start(){
 
 	}
 
-	void Update()
+	void FixedUpdate(){
+
+		SetSpeed ();
+		CheckJump();
+
+
+
+
+		//nextVelocity = rb.velocity; //Init.
+		//CheckJump();
+		//SetGravity();
+		//SetSpeed();
+		Debug.Log("Grounded:" + grounded + "   x:"+nextVelocity.x + "  y:"+nextVelocity.y + "  z:"+nextVelocity.z);
+		//rb.velocity = nextVelocity; //Apply change.
+	}
+
+
+	void SetGravity(){
+		//nextVelocity += gravity;
+
+	}
+
+
+	void SetSpeed(){
+		rb.velocity = new Vector3 (speed, rb.velocity.y, rb.velocity.z);
+	}
+
+
+	// Gère le saut du personnage, ainsi que son animation de saut
+	void CheckJump()
 	{
-		bool isGrounded = ((cc.collisionFlags & CollisionFlags.Below) != 0) ? true : false;
-		if (isGrounded)
+		if (true)//if (grounded)
 		{
-			
 			if (Input.GetButtonDown("Jump"))
 			{
-				velocity = new Vector3(speed,0.0F,0.0F);
-				velocity.y += jumpSpeed;
-			}
+				rb.AddForce(jump, ForceMode.Impulse);
+				//grounded = false;
+				//Debug.Log("passe ici");
+				//nextVelocity += jump;
+
+				}
 		}
 	}
 
-	void FixedUpdate()
-	{
-		bool isGrounded = ((cc.collisionFlags & CollisionFlags.Below) != 0) ? true : false;
-		if (!isGrounded) 
-		{
-			velocity += gravity * Time.deltaTime;
+
+
+	void OnCollisionEnter(Collision coll){
+		if (coll.gameObject.CompareTag ("Ground")) {
+			grounded = true;
 		}
-		cc.Move(velocity * Time.deltaTime);
-		//Debug.Log (isGrounded);
-		//Debug.Log ("x: " + velocity.x* Time.deltaTime + ", y: " + velocity.y* Time.deltaTime + ", z: "+ velocity.z* Time.deltaTime);
-		//Debug.Log(transform.GetChild(0).name);
 	}
 
 }
