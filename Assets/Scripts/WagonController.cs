@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class WagonController : MonoBehaviour {
 
-
+	/*******************************************************
+	* Les Attributs générale, qui s'applique a tout le script
+	*******************************************************/
 	public float speed = 10f;
 	public float jump = 7f;
 
@@ -12,19 +14,40 @@ public class WagonController : MonoBehaviour {
 	private Transform groundCheck;
 
 	private Rigidbody rb;
+	private AudioSource audioSaut;
+	private AudioSource audioRoue;
 
 
+	/*******************************************************
+	* Les méthode de unity
+	*******************************************************/
 	void Start(){
 		rb = GetComponent<Rigidbody>();
 		groundCheck = this.transform.Find ("groundCheck");
+
+		AudioSource[] audios = GetComponents<AudioSource>();
+		audioSaut = audios[0];
+		audioRoue = audios[1];
 	}
 
 	void FixedUpdate(){
+		if (!isGrounded()) {
+			audioRoue.Stop ();
+		}
 		SetSpeed ();
 		CheckJump ();
 	}
 
+	void OnCollisionEnter(Collision other){
+		if(other.gameObject.CompareTag("Ground")){
+			audioRoue.Play ();
+		}
+	}
 
+
+	/*******************************************************
+	* Mes méthodes
+	*******************************************************/
 	private void SetSpeed(){
 		rb.velocity = new Vector3 (speed, rb.velocity.y, rb.velocity.z);
 	}
@@ -37,6 +60,7 @@ public class WagonController : MonoBehaviour {
 			if (Input.GetButton("Jump"))
 			{
 				rb.AddForce(new Vector3(0f, jump, 0f), ForceMode.Impulse);
+				audioSaut.Play ();
 			}
 		}
 	}
