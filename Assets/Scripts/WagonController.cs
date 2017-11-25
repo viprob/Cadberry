@@ -59,6 +59,7 @@ public class WagonController : MonoBehaviour {
 		{
 			if (Input.GetButton("Jump"))
 			{
+				rb.velocity = new Vector3 (rb.velocity.x, 0f, 0f);
 				rb.AddForce(new Vector3(0f, jump, 0f), ForceMode.Impulse);
 				audioSaut.Play ();
 			}
@@ -66,6 +67,6 @@ public class WagonController : MonoBehaviour {
 	}
 
 	private bool isGrounded(){
-		return Physics.CheckSphere (groundCheck.position, 0.05f ,whatIsGround.value);
+		return Physics.CheckSphere (groundCheck.position, 0.08f ,whatIsGround.value);
 	}
 }
