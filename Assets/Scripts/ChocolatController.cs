@@ -9,7 +9,7 @@ public class ChocolatController : MonoBehaviour {
 	* Les Attributs générale, qui s'applique a tout le script
 	*******************************************************/
 	public float speed = 10f;
-	public float jump = 6f;
+	public float jump = 8f;
 
 	public LayerMask whatIsWagon;
 	private Transform wagonCheck;
