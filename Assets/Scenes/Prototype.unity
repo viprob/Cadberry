@@ -2222,7 +2222,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1967356086}
-  - component: {fileID: 1967356087}
   m_Layer: 0
   m_Name: groundCheck
   m_TagString: Untagged
@@ -2243,17 +2242,6 @@ Transform:
   m_Father: {fileID: 276207022}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1967356087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1967356085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2692420aa0b5b74bb0deea77d04c5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2035903526
 Prefab:
   m_ObjectHideFlags: 0
