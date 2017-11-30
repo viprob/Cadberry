@@ -31,7 +31,7 @@ public class ChocolatController : MonoBehaviour {
 	void Awake(){
 		rb = GetComponent<Rigidbody>();
 		wagonCheck = this.transform.Find ("wagonCheck");
-		wagon = GameObject.FindGameObjectsWithTag ("Player")[0];
+		wagon = GameObject.FindGameObjectsWithTag ("Wagon")[0];
 		//offsetY = transform.position.y - wagon.transform.position.y;
 
 		audio = GetComponent<AudioSource>();
@@ -47,7 +47,7 @@ public class ChocolatController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision other){
-		if(other.gameObject.CompareTag("Player")){
+		if(other.gameObject.CompareTag("Wagon")){
 			audio.Play ();
 		}
 	}

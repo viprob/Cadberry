@@ -19,13 +19,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4054004017545866}
+  - component: {fileID: 54748842860569516}
   - component: {fileID: 33252869120590396}
   - component: {fileID: 65276239548418324}
-  - component: {fileID: 23415328642506094}
   - component: {fileID: 114451365557895434}
+  - component: {fileID: 114926168364172720}
+  - component: {fileID: 23415328642506094}
   m_Layer: 0
   m_Name: Glacon
-  m_TagString: PickUp
+  m_TagString: Glacon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437862889001376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.4, y: 1.68, z: -0.001}
+  m_LocalPosition: {x: 18.400002, y: 3.69, z: -0.001}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +84,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437862889001376}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54748842860569516
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437862889001376}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &65276239548418324
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -89,7 +106,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1437862889001376}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -103,5 +120,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5597df69c603f42128e7ae676f2b7335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114926168364172720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1437862889001376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8b19310b7634c7fad938ceda3854a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
