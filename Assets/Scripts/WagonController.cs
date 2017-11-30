@@ -8,7 +8,7 @@ public class WagonController : MonoBehaviour {
 	* Les Attributs générale, qui s'applique a tout le script
 	*******************************************************/
 	public float speed = 10f;
-	public float jump = 7f;
+	public float jump = 9.24f;
 
 	public LayerMask whatIsGround;
 	private Transform groundCheck;
