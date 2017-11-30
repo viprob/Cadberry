@@ -20,7 +20,7 @@ public class ChocolatController : MonoBehaviour {
 	private AudioSource audio;
 
 	private GameObject wagon;
-	private float offsetY;
+	//private float offsetY;
 
 
 
@@ -32,7 +32,7 @@ public class ChocolatController : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 		wagonCheck = this.transform.Find ("wagonCheck");
 		wagon = GameObject.FindGameObjectsWithTag ("Player")[0];
-		offsetY = transform.position.y - wagon.transform.position.y;
+		//offsetY = transform.position.y - wagon.transform.position.y;
 
 		audio = GetComponent<AudioSource>();
 	}
