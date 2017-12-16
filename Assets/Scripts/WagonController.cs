@@ -12,6 +12,7 @@ public class WagonController : MonoBehaviour {
 
 	public LayerMask whatIsGround;
 	private Transform groundCheck;
+	public bool isGrounded;
 
 	private Rigidbody rb;
 	private AudioSource audioSaut;
@@ -31,7 +32,8 @@ public class WagonController : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (!isGrounded()) {
+		isGrounded = IsGrounded ();
+		if (!isGrounded) {
 			audioRoue.Stop ();
 		}
 		SetSpeed ();
@@ -55,7 +57,7 @@ public class WagonController : MonoBehaviour {
 
 	private void CheckJump()
 	{
-		if (isGrounded())
+		if (isGrounded)
 		{
 			if (Input.GetButton("Jump"))
 			{
@@ -66,7 +68,7 @@ public class WagonController : MonoBehaviour {
 		}
 	}
 
-	private bool isGrounded(){
+	private bool IsGrounded(){
 		return Physics.CheckSphere (groundCheck.position, 0.08f ,whatIsGround.value);
 	}
 }

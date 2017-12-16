@@ -671,6 +671,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  isGrounded: 0
 --- !u!65 &276207020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -998,6 +999,7 @@ GameObject:
   - component: {fileID: 357364992}
   - component: {fileID: 357364991}
   - component: {fileID: 357364990}
+  - component: {fileID: 357364995}
   - component: {fileID: 357364994}
   m_Layer: 0
   m_Name: Chocolat
@@ -1012,7 +1014,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 357364989}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95d405ca3c331ad4b91409fec8b895ae, type: 3}
   m_Name: 
@@ -1144,6 +1146,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &357364995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 357364989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6efbafa6ef464382adb29a96f8dcc6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
+  jump: 8
+  whatIsWagon:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &397552367 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4297743838052096, guid: ed507a8b7b2704a0cb5e78a72ae0a8e3,
@@ -2066,11 +2084,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4054004017545866, guid: 51be1d5e5322446fb982c1a38bafa5a0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 21.63
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4054004017545866, guid: 51be1d5e5322446fb982c1a38bafa5a0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.69
+      value: 6.43
       objectReference: {fileID: 0}
     - target: {fileID: 4054004017545866, guid: 51be1d5e5322446fb982c1a38bafa5a0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2094,6 +2112,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4054004017545866, guid: 51be1d5e5322446fb982c1a38bafa5a0, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451365557895434, guid: 51be1d5e5322446fb982c1a38bafa5a0,
+        type: 2}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
