@@ -42,7 +42,7 @@ public class WagonController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision other){
 		if(other.gameObject.CompareTag("Ground")){
-			audioRoue.Play ();
+			//audioRoue.Play ();
 		}
 	}
 
